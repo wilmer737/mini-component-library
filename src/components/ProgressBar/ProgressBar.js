@@ -11,14 +11,13 @@ const ProgressBase = styled.div`
   height: 8px;
   box-shadow: inset 0px 2px 4px rgba(128, 128, 128, 0.35);
   border-radius: 4px;
+  overflow: hidden;
 `
 
 const Bar = styled.div`
   background: ${COLORS.primary};
   width: ${(props) => props.progress}%;
   height: 100%;
-  border-radius: 4px ${(props) => (props.progress === 100 ? "4px 4px" : "0 0")}
-    4px;
 `
 
 const MediumProgressBar = styled(ProgressBase)`
@@ -29,9 +28,6 @@ const LargeProgressBar = styled(ProgressBase)`
   height: 20px;
   padding: 4px;
   border-radius: 8px;
-  ${Bar} & {
-    border-radius: 8px;
-  }
 `
 
 const Sizes = {
